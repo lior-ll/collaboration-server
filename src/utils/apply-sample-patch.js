@@ -40,7 +40,8 @@ module.exports = async ({ db, patch, sessionId, workingSummaryObject }) => {
   ]).newDocument
 
   // Update sample in database with new content and new version
-  if (newSampleContent._id)
+/*  
+if (newSampleContent._id)
     db.prepare(
       "UPDATE sample_state SET sample_version=?, sample_ref_id=?, content=? WHERE session_short_id=? AND sample_ref_id=?"
     ).run(
@@ -50,7 +51,7 @@ module.exports = async ({ db, patch, sessionId, workingSummaryObject }) => {
       sessionId,
       sampleId
     )
-  else
+  else*/
     db.prepare(
       "UPDATE sample_state SET sample_version=?, content=? WHERE session_short_id=? AND sample_ref_id=?"
     ).run(
